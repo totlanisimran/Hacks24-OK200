@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Pressable, Modal, Alert } from "react-native";
 import { Dimensions } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
 import ConfettiCannon from "react-native-confetti-cannon";
 
 const screenWidth = Dimensions.get('window').width;
@@ -33,7 +33,7 @@ export default function Eligibility({ navigation }) {
     return (
         <View style={EligibilityFormStyles.container}>
             <View style={EligibilityFormStyles.header}>
-                <MaterialCommunityIcons name="numeric-2-circle-outline" size={40} color="#456268" />
+                <FontAwesome6 name="heart-circle-check" size={24} color="#F18C8E" />
                 <Text style={EligibilityFormStyles.headerText}>Eligibility</Text>
             </View>
             <TextInput
@@ -101,7 +101,7 @@ const EligibilityFormStyles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#FCF8EC",
+        backgroundColor: "#F8EDE3",
     },
     header: {
         flex: 0.2,
@@ -113,7 +113,7 @@ const EligibilityFormStyles = StyleSheet.create({
     headerText: {
         fontSize: 30,
         fontWeight: '800',
-        color: '#456268',
+        color: '#305F72',
     },
     input: {
         width: inputWidth,
@@ -124,7 +124,7 @@ const EligibilityFormStyles = StyleSheet.create({
         padding: 10,
         fontSize: 16,
         backgroundColor: '#F5F5F5',
-        borderColor: '#79A3B1',
+        borderColor: '#305F72',
         fontSize: 14
     },
     button: {
@@ -132,8 +132,8 @@ const EligibilityFormStyles = StyleSheet.create({
         padding: 10,
         marginVertical: 8,
         margin: 100,
-        backgroundColor: '#456268',
-        borderColor: '#79A3B1',
+        backgroundColor: '#F18C8E',
+        borderColor: '#F18C8E',
         borderWidth: 2,
         borderRadius: 50,
     },
