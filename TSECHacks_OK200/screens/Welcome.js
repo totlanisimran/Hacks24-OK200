@@ -5,13 +5,14 @@ const Welcome = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.imageStyle} source={require("../assets/csrLogo.jpg.jpeg")}></Image>
-      <Text style={styles.welcomeText}>Welcome to our App!</Text>
+      <Image style={styles.imageStyle} source={require("../assets/csrLogo.jpg.png")}></Image>
+      <Text style={styles.welcomeText}>Welcome to ImpactConnect!</Text>
+      <Text style={styles.infoText}>ImpactConnect brings to you a platform for streamlined and efficient CSR cause selection and fund allocations.</Text>
       <Pressable
         style={({ pressed }) => [
           styles.button1,
           {
-            backgroundColor: pressed ? '#990000' : '#ff0000',
+            backgroundColor: pressed ? '#990000' : '#F18C8E',
           },
         ]}
         onPress={() => navigation.navigate('Login')}
@@ -27,10 +28,17 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: '#F8EDE3'
     },
     welcomeText: {
       fontSize: 25,
-      marginBottom: 60
+      fontWeight:'800',
+      marginBottom: 60,
+      color:'#305F72'
+    },
+    infoText:{
+      fontSize: 16,
+      color:'black'
     },
     button1: {
       marginTop: 30,
@@ -45,7 +53,8 @@ const styles = StyleSheet.create({
     },
     imageStyle: {
         height: 300,
-        marginBottom: 30
+        marginBottom: 30,
+        resizeMode:'contain'
     }
   });
 

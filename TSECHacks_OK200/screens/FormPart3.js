@@ -38,8 +38,9 @@ export default function FormInput3({ navigation }) {
     return (
         <View style={FormInput3Styles.container}>
             <View style={FormInput3Styles.header}>
-                <MaterialCommunityIcons name="numeric-3-circle-outline" size={40} color="#456268" />
+                <MaterialCommunityIcons name="numeric-3-circle-outline" size={40} color="#F18C8E" />
                 <Text style={FormInput3Styles.headerText}>Location Details</Text>
+                <Text style={FormInput3Styles.infoText}>Kindly enter the location for fund allocation</Text>
             </View>
             <Picker
                 style={FormInput3Styles.input}
@@ -91,7 +92,7 @@ const FormInput3Styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#FCF8EC",
+        backgroundColor: "#F8EDE3",
     },
     header: {
         flex: 0.2,
@@ -103,7 +104,11 @@ const FormInput3Styles = StyleSheet.create({
     headerText: {
         fontSize: 30,
         fontWeight: '800',
-        color: '#456268',
+        color: '#305F72',
+    },
+    infoText:{
+        fontSize: 16,
+        color:'black'
     },
     input: {
         width: inputWidth,
@@ -114,7 +119,7 @@ const FormInput3Styles = StyleSheet.create({
         padding: 10,
         fontSize: 16,
         backgroundColor: '#F5F5F5',
-        borderColor: '#79A3B1',
+        borderColor: '#305F72',
         fontSize: 14,
     },
     button: {
@@ -122,8 +127,8 @@ const FormInput3Styles = StyleSheet.create({
         padding: 10,
         marginVertical: 8,
         margin: 100,
-        backgroundColor: '#456268',
-        borderColor: '#79A3B1',
+        backgroundColor: '#F18C8E',
+        borderColor: '#F18C8E',
         borderWidth: 2,
         borderRadius: 50,
     },

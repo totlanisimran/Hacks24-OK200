@@ -14,7 +14,7 @@ const login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Welcome Back!</Text>
 
       <TextInput
         style={styles.input}
@@ -49,28 +49,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#F8EDE3',
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '900',
     marginBottom: 20,
-    color: '#2c3e50',
+    color: '#305F72',
   },
   input: {
     height: 40,
     width: '100%',
-    borderColor: '#3498db',
+    borderColor: '#305F72',
     borderWidth: 1,
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 5,
   },
   loginButton: {
-    backgroundColor: '#3498db',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 5,
+    backgroundColor: '#F18C8E',
+    paddingVertical: 10,
+    paddingHorizontal: 25,
+    borderRadius: 100,
   },
   loginButtonText: {
     color: '#fff',
@@ -80,13 +80,14 @@ const styles = StyleSheet.create({
   text1: {
     marginTop: 10,
     marginBottom: 10,
-    color: '#2c3e50',
+    color: '#305F72',
+    fontWeight:'bold'
   },
   registerButton: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#F18C8E',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 100,
   },
   registerButtonText: {
     color: '#fff',

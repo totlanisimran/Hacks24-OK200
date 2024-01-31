@@ -7,12 +7,14 @@ import Eligibility from "../screens/Eligibility";
 import Welcome from "../screens/Welcome";
 import Login from "../screens/login";
 import Posts from "../screens/Posts";
+import Profile from "../screens/Profile";
+import NgoList from "../screens/NgoList";
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="App Name">
+    <Stack.Navigator initialRouteName="NgoList">
       <Stack.Screen name="FormPart1" component={FormPart1} />
       <Stack.Screen name="FormPart2" component={FormPart2} />
       <Stack.Screen name="FormPart3" component={FormPart3} />
@@ -20,6 +22,8 @@ const RootNavigator = () => {
       <Stack.Screen name="App Name" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Posts" component={Posts} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="NgoList" component={NgoList} />
     </Stack.Navigator>
   );
 };

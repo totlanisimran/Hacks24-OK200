@@ -30,7 +30,7 @@ export default function FormPart2({navigation}) {
     return (
         <View style={FormPart2Styles.container}>
             <View style={FormPart2Styles.header}>
-                <MaterialCommunityIcons name="numeric-2-circle-outline" size={40} color="#456268" />
+                <MaterialCommunityIcons name="numeric-2-circle-outline" size={40} color="#F18C8E" />
                 <Text style={FormPart2Styles.headerText}>Company Values</Text>
             </View>
             <TextInput style={FormPart2Styles.input} placeholder="Core Values" value={coreValues} onChangeText={onChangeCoreValues} />
@@ -74,7 +74,7 @@ const FormPart2Styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#FCF8EC",
+        backgroundColor: "#F8EDE3",
     },
     header: {
         flex: 0.2,
@@ -86,7 +86,7 @@ const FormPart2Styles = StyleSheet.create({
     headerText: {
         fontSize: 30,
         fontWeight: '800',
-        color: '#456268',
+        color: '#305F72',
     },
     input: {
         width: inputWidth,
@@ -97,7 +97,7 @@ const FormPart2Styles = StyleSheet.create({
         padding: 10,
         fontSize: 16,
         backgroundColor: '#F5F5F5',
-        borderColor: '#79A3B1',
+        borderColor: '#305F72',
         fontSize: 14
     },
     dropdownContainer: {
@@ -114,17 +114,17 @@ const FormPart2Styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         backgroundColor: '#F5F5F5',
-        borderColor: '#79A3B1',
+        borderColor: '#305F72',
     },
     button: {
         width: 150,
         padding: 10,
         marginVertical: 8,
         margin: 100,
-        backgroundColor: '#456268',
-        borderColor: '#79A3B1',
+        backgroundColor: '#F18C8E',
+        borderColor: '#F18C8E',
         borderWidth: 2,
-        borderRadius: 50,
+        borderRadius: 100,
     },
     buttonText: {
         color: 'white',
@@ -134,7 +134,7 @@ const FormPart2Styles = StyleSheet.create({
 
     addButton: {
         marginTop: 8,
-        backgroundColor: '#456268',
+        backgroundColor: '#305F72',
         padding: 10,
         borderRadius: 10,
     },
@@ -144,8 +144,9 @@ const FormPart2Styles = StyleSheet.create({
         fontSize: 16,
     },
     selectedAreasText: {
-        marginTop: 8,
+        marginTop: 12,
+        marginBottom:25,
         fontSize: 16,
-        color: '#456268',
+        color: '#305F72',
     },
 });
