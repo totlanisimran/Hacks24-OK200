@@ -5,7 +5,7 @@ const db = async () => {
     mongoose.set("strictQuery", false);
     await mongoose
       .connect(
-        "mongodb+srv://ok200:5aljgp7bi7z8x6AK@cluster0.qyvninf.mongodb.net/?retryWrites=true&w=majority", //mongo link
+        //mongo link
         {
           useNewUrlParser: true,
           useUnifiedTopology: true,
