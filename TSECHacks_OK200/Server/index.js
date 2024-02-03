@@ -20,11 +20,14 @@ db()
 const comp_route = require("./routes/Company");
 const ngo_route = require("./routes/Ngo");
 const chat_route = require("./routes/Chat");
+const report_route = require("./routes/Report");
+const ngocomp_route = require("./routes/AddNgos");
 
 app.use("/api/comp", comp_route);
 app.use("/api/ngo", ngo_route);
 app.use("/api/chat", chat_route);
-
+app.use("/api/report", report_route);
+app.use("/api/List", ngocomp_route);
 app.get("/", (req, res) => {
   res.json("Hello hi ");
 });

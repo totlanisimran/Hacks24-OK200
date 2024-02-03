@@ -5,21 +5,23 @@ import {
   GestureHandlerRootView,
   ScrollView,
 } from "react-native-gesture-handler";
-// import { useCompany } from "../context/CompanyContext";
+import { useCompany } from "../context/CompanyContext";
 
 const ChatScreen = ({ route }) => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
-  //   const { companyName } = useCompany();
-  const companyName = "company123";
-  const ngoName = "ngo456";
+  const { companyName } = useCompany();
+  // const companyName = "company123";
+  const ngoName = route.params;
+  console.log(companyName);
+  console.log(ngoName);
 
   const fetchMessages = async () => {
     try {
       //   console.log(companyName.trim());
       //   console.log(companyName);
       const response = await axios.get(
-        `http://192.168.137.165:5000/api/chat/conversation/${companyName}/${ngoName}`
+        `http://192.168.137.181:5000/api/chat/conversation/${companyName}/${ngoName}`
       );
       console.log(response.data);
       setMessages(response.data);
@@ -42,7 +44,7 @@ const ChatScreen = ({ route }) => {
       };
       console.log(newMessage);
       setMessages((prevMessages) => [...prevMessages, newMessage]);
-      await axios.post("http://192.168.137.165:5000/api/chat/send", newMessage);
+      await axios.post("http://192.168.137.181:5000/api/chat/send", newMessage);
       setInputMessage("");
     } catch (error) {
       console.error("Error sending message", error);

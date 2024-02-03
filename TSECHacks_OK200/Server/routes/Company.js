@@ -35,6 +35,55 @@ router.put("/companyProfile/:companyId", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+router.get("/getcompanyProfile/:companyName", async (req, res) => {
+  const companyName = req.params.companyName;
+
+  try {
+    const companyProfile = await CompanyProfile.findOne({ name: companyName });
+
+    if (!companyProfile) {
+      return res.status(404).json({ error: "Company profile not found" });
+    }
+
+    res.status(200).json(companyProfile);
+  } catch (error) {
+    console.error("Error fetching company profile:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+router.get("/companyProfile/:companyName", async (req, res) => {
+  const companyName = req.params.companyName;
+  console.log(companyName);
+  try {
+    const companyProfile = await CompanyProfile.findOne({ name: companyName });
+
+    if (!companyProfile) {
+      return res.status(404).json({ error: "Company profile not found" });
+    }
+
+    const companyLocationAndInterest = {
+      selectedDistrict: companyProfile.selectedDistrict || "N/A",
+      areasOfInterest: companyProfile.areasOfInterest || [],
+    };
+
+    res.json(companyLocationAndInterest);
+  } catch (error) {
+    console.error("Error fetching company profile:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+router.delete("/companyProfiles", async (req, res) => {
+  try {
+    const deletedProfiles = await CompanyProfile.deleteMany({});
+
+    res
+      .status(200)
+      .json({ message: "All company profiles deleted", deletedProfiles });
+  } catch (error) {
+    console.error("Error deleting all company profiles:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 router.get("/", async (req, res) => {
   res.status(200).send("company page");
 });

@@ -9,8 +9,11 @@ import {
   Image,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const NgoModal = ({ visible, ngo, onClose }) => {
+  const navigation = useNavigation();
+
   return (
     <Modal visible={visible} animationType="slide" onRequestClose={onClose}>
       {ngo && (
@@ -25,12 +28,12 @@ const NgoModal = ({ visible, ngo, onClose }) => {
                 />
                 <Text style={styles.modalTitle}>{ngo.ngoName}</Text>
               </View>
-              <Ionicons
-                name="chatbubbles-sharp"
-                size={36}
-                color="#305F72"
+              <Pressable
+                onPress={() => navigation.navigate("ChatScreen", ngo.ngoName)}
                 style={{ marginLeft: "auto" }}
-              />
+              >
+                <Ionicons name="chatbubbles-sharp" size={36} color="#305F72" />
+              </Pressable>
             </View>
             <Text style={styles.modalTextCenter}>{ngo.missionStatement}</Text>
             {/* Sectors of Operation and Contact Information */}

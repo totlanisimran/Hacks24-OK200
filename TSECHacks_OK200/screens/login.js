@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Pressable, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Pressable,
+  StyleSheet,
+} from "react-native";
 
-const login = ({navigation}) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     // Perform login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
     // You can add your authentication logic here
   };
 
@@ -33,12 +40,20 @@ const login = ({navigation}) => {
         onChangeText={(text) => setPassword(text)}
       />
 
-      <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('Posts')}>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => navigation.navigate("Posts")}
+      >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
       <Text style={styles.text1}>Not a member?</Text>
-      <Pressable onPress={() => navigation.navigate('FormPart1')} style={styles.registerButton}><Text style={styles.registerButtonText}>Register with us</Text></Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("FormPart1")}
+        style={styles.registerButton}
+      >
+        <Text style={styles.registerButtonText}>Register with us</Text>
+      </Pressable>
     </View>
   );
 };
@@ -46,54 +61,54 @@ const login = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
-    backgroundColor: '#F8EDE3',
+    backgroundColor: "#F8EDE3",
   },
   title: {
     fontSize: 24,
-    fontWeight: '900',
+    fontWeight: "900",
     marginBottom: 20,
-    color: '#305F72',
+    color: "#305F72",
   },
   input: {
     height: 40,
-    width: '100%',
-    borderColor: '#305F72',
+    width: "100%",
+    borderColor: "#305F72",
     borderWidth: 1,
     marginBottom: 20,
     paddingLeft: 10,
     borderRadius: 5,
   },
   loginButton: {
-    backgroundColor: '#F18C8E',
+    backgroundColor: "#F18C8E",
     paddingVertical: 10,
     paddingHorizontal: 25,
     borderRadius: 100,
   },
   loginButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   text1: {
     marginTop: 10,
     marginBottom: 10,
-    color: '#305F72',
-    fontWeight:'bold'
+    color: "#305F72",
+    fontWeight: "bold",
   },
   registerButton: {
-    backgroundColor: '#F18C8E',
+    backgroundColor: "#F18C8E",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 100,
   },
   registerButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
-export default login;
+export default Login;
