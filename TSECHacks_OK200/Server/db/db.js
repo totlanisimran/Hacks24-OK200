@@ -182,9 +182,60 @@ const publicPostSchema = new mongoose.Schema({
   },
 });
 
+const expenditureSchema = new mongoose.Schema({
+  category: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+});
+
+const reportSchema = new mongoose.Schema({
+  companyName: {
+    type: String,
+    required: true,
+  },
+  ngoName: {
+    type: String,
+    required: true,
+  },
+  allocatedMoney: {
+    type: Number,
+    required: true,
+  },
+  expenditures: {
+    type: [expenditureSchema],
+    required: true,
+  },
+});
+
+const selectedNgoSchema = new mongoose.Schema({
+  companyName: {
+    type: String,
+    required: true,
+  },
+  selectedNgos: {
+    type: [String],
+    required: true,
+  },
+});
+
 const PublicPost = mongoose.model("PublicPost", publicPostSchema);
 const Chat = mongoose.model("Message", messageSchema);
 const NGO = mongoose.model("NGO", ngoSchema);
 const CompanyProfile = mongoose.model("CompanyProfile", companyProfileSchema);
+const Report = mongoose.model("Report", reportSchema);
+const SelectedNgo = mongoose.model("SelectedNgo", selectedNgoSchema);
 
-module.exports = { CompanyProfile, db, NGO, Chat, PublicPost };
+module.exports = {
+  CompanyProfile,
+  db,
+  NGO,
+  Chat,
+  PublicPost,
+  Report,
+  SelectedNgo,
+};
